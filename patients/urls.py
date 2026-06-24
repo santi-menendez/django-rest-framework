@@ -16,9 +16,10 @@ Including another URLconf
 """
 
 from django.urls import path
-from patients.views import ListPatients, DetailPatient
+
+from patients.views import DetailPatientView, ListPatientsView
 
 urlpatterns = [
-    path('patients/', ListPatients),
-    path('patients/<int:pk>/', DetailPatient),
+    path('patients/', ListPatientsView.as_view()),
+    path('patients/<int:pk>/', DetailPatientView.as_view()),
 ]
