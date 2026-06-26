@@ -40,6 +40,7 @@ class ListPatientsView(ListAPIView, CreateAPIView):
     allowed_methods = ["GET", "POST"]
     serializer_class = PatientSerializer
     queryset = Patient.objects.all()
+
     """def get(self, request):
         patients = Patient.objects.all()
         serializer = PatientSerializer(patients, many=True)
