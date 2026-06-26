@@ -30,7 +30,10 @@ class PatientSerializer(serializers.ModelSerializer):
     def get_age(self, obj):
         age_td = date.today() - obj.date_of_birth
         years = age_td.days // 365
-        return f"{years} años"
+        remaining_days = age_td.days % 365
+        months = remaining_days // 30
+        days = remaining_days % 30
+        return f"{years} años, {months} meses y {days} días"
 
     def validate_date_of_birth(self, value):
         today = datetime.date.today()
