@@ -13,20 +13,19 @@ class PatientSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Patient
-        fields = "__all__"
-        """
+        # fields = "__all__"
         fields = [
-            'id',
-            'first_name',
-            'last_name',
-            'age',
-            'date_of_birth',
-            'contact_number',
-            'email',
-            'address',
-            'medical_history',
-            'appointments',
-        ]"""
+            "id",
+            "first_name",
+            "last_name",
+            "age",
+            "date_of_birth",
+            "contact_number",
+            "email",
+            "address",
+            "medical_history",
+            "appointments",
+        ]
 
     def get_age(self, obj):
         age_td = date.today() - obj.date_of_birth
